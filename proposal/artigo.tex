@@ -1,0 +1,170 @@
+% Arquivo LaTeX de exemplo de artigo
+%
+% Criação: Jesús P. Mena-Chalco
+% Revisão: Fabio Kon e Paulo Feofiloff
+% Adaptação para UTF8, biblatex e outras melhorias: Nelson Lago
+%
+% Except where otherwise indicated, these files are distributed under
+% the MIT Licence. The example text, which includes the tutorial and
+% examples as well as the explanatory comments in the source, are
+% available under the Creative Commons Attribution International
+% Licence, v4.0 (CC-BY 4.0) - https://creativecommons.org/licenses/by/4.0/
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREÂMBULO LaTeX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Se você está escrevendo um artigo para algum periódico que fornece um
+% modelo LaTeX, é melhor usá-lo (e, se necessário, você pode copiar coisas
+% úteis deste modelo). Se não houver um modelo preexistente, você pode tentar
+% adaptar este para o formato esperado, mas essa não é uma tarefa trivial.
+%
+% A opção twoside (frente-e-verso) significa que a aparência das páginas pares
+% e ímpares pode ser diferente. Por exemplo, as margens podem ser diferentes ou
+% os números de página podem aparecer à direita ou à esquerda alternadamente.
+% Mas nada impede que você crie um documento "só frente" e, ao imprimir, faça
+% a impressão frente-e-verso.
+%
+% Aqui também definimos a língua padrão do documento
+% (a última da lista) e línguas adicionais.
+%\documentclass[a4paper,12pt,twoside,brazilian,english]{article}
+\documentclass[a4paper,12pt,twoside,english,brazilian]{article}
+
+% O preâmbulo de um documento LaTeX pode ser razoavelmente longo. Neste
+% modelo, optamos por reduzi-lo, colocando praticamente tudo do preâmbulo
+% nas packages "imegoodies" e "imelooks".
+%
+% imegoodies carrega diversas packages muito úteis e populares (algumas
+% são praticamente obrigatórias, como amsmath, babel, array etc.). É
+% uma boa ideia usá-la com outros documentos também. Ela inclui vários
+% comentários explicativos e dicas de uso; não tenha medo de alterá-la
+% conforme a necessidade.
+%
+% imelooks carrega algumas packages e configurações que definem a
+% aparência do documento; você também pode querer usá-la (ou partes
+% dela) com outros documentos para obter as mesmas fontes, margens
+% etc. Tal como "imegoodies", pode valer a pena ler os comentários
+% e fazer modificações nessa package. Com a opção "thesis", imelooks
+% também define os comandos para capa, folha de rosto etc. Para uso
+% com a package beamer, a opção "beamer" define o estilo de pôsteres
+% e apresentações.
+\usepackage{imegoodies}
+\usepackage{imelooks}
+\usepackage{biblatex}
+\usepackage{tabularx}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+%\nocolorlinks % para impressão em P&B
+
+% Diretórios onde estão as figuras; com isso, não é necessário (mas
+% é permitido) colocar o caminho completo em \includegraphics. Note
+% que a extensão nunca é necessária (mas é permitida), ou seja, o
+% resultado é o mesmo com "\includegraphics{figuras/foto.jpeg}",
+% "\includegraphics{foto.jpeg}", "\includegraphics{figuras/foto}"
+% ou "\includegraphics{foto}".
+
+% Comandos rápidos para mudar de língua:
+% \en -> muda para o inglês
+% \br -> muda para o português
+% \texten{blah} -> o texto "blah" é em inglês
+% \textbr{blah} -> o texto "blah" é em português
+\babeltags{br = brazilian, en = english}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% METADADOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% O arquivo com os dados bibliográficos para biblatex; você pode usar
+% este comando mais de uma vez para acrescentar múltiplos arquivos
+\addbibresource{bibliografia.bib}
+
+% Este comando permite acrescentar itens à lista de referências sem incluir
+% uma referência de fato no texto (pode ser usado em qualquer lugar do texto)
+%\nocite{dbevolution, shannon, FSF}
+% Com este comando, todos os itens do arquivo .bib são incluídos na lista
+% de referências
+%\nocite{*}
+
+% É possível definir como determinadas palavras podem (ou não) ser
+% hifenizadas; no entanto, a hifenização automática geralmente funciona bem
+\babelhyphenation{documentclass latexmk soft-ware clsguide} % todas as línguas
+\babelhyphenation[brazilian]{Fu-la-no}
+\babelhyphenation[english]{what-ever}
+
+% Estes comandos definem o título e autoria do trabalho e devem sempre ser
+% definidos, pois além de serem utilizados para criar a capa (com o comando
+% \maketitle), também são armazenados nos metadados do PDF. O estilo padrão
+% de diversos periódicos exige também outros dados, como email, filiação etc.
+\title{Visualizing Responsibility Distribution in the Linux Kernel Codebase}
+\author{
+  Guilherme Luiz Pereira de Almeida,
+  Rodrigo Dassie Paneto \\
+  Supervisor: Prof. Dr. Paulo Roberto Miranda Meirelles
+}
+
+% O pacote hyperref armazena alguns metadados no PDF gerado (em particular,
+% o conteúdo de "\title" e "\author"). Também é possível armazenar outros
+% dados, como uma lista de palavras-chave ou o resumo.
+\hypersetup{
+  pdfkeywords={LaTeX, artigo, proposal, proposta},
+  pdfsubject={Proposal for a undergraduate thesis about Visualizing Responsibility Distribution in the Linux Kernel Codebase},
+}
+
+% Por padrão, article inclui a data atual; com este comando, você pode
+% definir uma data específica, inserir algum outro texto ou, deixando o
+% conteúdo em branco, removê-la.
+\date{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INÍCIO DO ARTIGO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Gera a "capa" do artigo (geralmente, título, autor etc. sem que haja uma
+% quebra de página para o restante do conteúdo)
+\maketitle
+
+\section{Introduction}
+\subsection{Context and motivation}
+The open-source community has been, for as long as it exists, a prominent facet of the software zeitgeist. Throughout the years, we have seen more and more software projects be created and maintained following this format.Indeed, the ability to create such large scale products backed by a global array of contributors proved to be quite a successful formula, as research indicates that the labor replacement value of open-source software is so significant that firms would need to spend over three times more on software development if these resources did not exist \cite{oValue} .
+\par Whether it be the numerous contributions of the GNU project, or the Linux kernel, the truth is that the FLOSS community achieved impressive results. Unlike traditional proprietary software, which often faces diminishing returns as complexity increases, the Linux kernel has demonstrated a unique pattern, expanding its codebase and contributor base simultaneously for decades \cite{evoSoft} .
+\par As any large software codebase, open source projects require a robust organizational cohesion. Sustaining a practical hierarchy of contributors while also ensuring that no person is over demanded, or a large part of the knowledge does not end up concentrated in  one single individual are not easy tasks, specially in the long term. Many efforts were made to better map these kind of issues inside a codebase, such as:
+\begin{itemize}
+	\item The Dashboard for Unified Kernel Statistics (DUKS)  is "an analytical platform providing insights into Linux Kernel development cycles, contributor patterns, and collaborative dynamics within one of the world's largest open-source projects"  \cite{duks}, enviosioned as "a cornerstone open-access utility to support analyses on the Linux kernel evolution and maintenance" \cite{streamline}.
+	\item The Developer Rivers, "a timeline-based visualization technique that shows how developers work on software modules. The flow of developers' activity is visualized by a river metaphor: activities are transferred between modules represented as rivers" \cite{rivers}.
+	\item The DENIM project, a "tool that enables users to identify data access points in microservices and visualize them in an interactive treemap" \cite{denim}.	
+\end{itemize}
+\par All these tools aim to simplify the process of analyzing large codebases and to help intelligently manage these complex work hierarchies, which is, as previously stated, one of the biggest challenges when dealing with open source software.
+\section{Proposal}
+\subsection{Objectives}
+Aiming to provide another tool to visualize open source codebases, the Linux Kernel in specific, this work objectives are:
+\begin{itemize}
+	\item Evaluate the previously developed tools and how they could aggregate to our work.
+	\item Develop an improved interactive Tree-Map \cite{treemap} visualization of the Kernel, displaying the responsability distribution of the kernel codebase.
+	\item Make the implementation more efficient, fluid and user-friendly, removing the sttutering present in some of the old visualizations.
+\end{itemize}
+\subsection{Methodology}
+The methodology is structured into three primary phases:
+\begin{itemize}
+	\item An initial evaluation of the existing Tree-Map implementations by Silva and André to identify specific bottlenecks in rendering logic and data parsing.
+	\item Mantain the foundational logic of previous tools while implementing a more efficient data structure (such as a hierarchical JSON) to represent the Kernel’s responsibility distribution.
+	\item Implement techniques such as hardware acceleration to eliminate the stuttering observed in previous iterations, ensuring a fluid interactive experience even at high depths of the directory tree.
+ \end{itemize}
+ \newpage
+\section{Cronogram}
+
+
+\newpage
+\printbibliography[
+  title=References, % "Referências", recomendado pela ABNT
+  %title=\bibname\label{sec:bib}, % "Bibliografia"
+ ]
+
+\end{document}

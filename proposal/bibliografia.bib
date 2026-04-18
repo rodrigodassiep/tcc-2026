@@ -1,0 +1,128 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% INSERINDO COMENTÁRIOS EM ARQUIVOS .bib %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 1. Como em outros arquivos LaTeX, comentários são iniciados por "%" e,
+%    portanto, é preciso usar "\%" para imprimir o caractere "%". Esquecer
+%    disso pode gerar erros difíceis de encontrar!
+%
+% 2. Não é possível inserir comentários dentro de uma entrada, apenas fora.
+%
+% 3. Não é possível incluir o caractere arroba em um comentário.
+%
+% 4. Se quiser desabilitar temporariamente um campo ("comentar" o campo),
+%    troque seu nome para algum nome inválido, como "author-disable".
+%    Se quiser fazer alguma observação permanente dentro de uma entrada,
+%    você também pode usar algum nome de campo inválido, como "lembrete",
+%    ou usar o campo "annotation", que normalmente é ignorado.
+%
+% 5. Se quiser desabilitar temporariamente uma entrada inteira ("comentar" a
+%    entrada), não basta colocar "%" nas linhas correspondentes por causa do
+%    caractere arroba; também é preciso remover a arroba.
+%
+% 6. Na verdade, as regras não são bem essas, mas segui-las é uma boa ideia:
+%    https://tex.stackexchange.com/a/262282
+%
+% Por exemplo, esta entrada está comentada, ou seja, não tem efeito: se
+% houvesse uma referência a ela no texto, a referência ficaria inválida.
+% Observe que, para isso, o caractere arroba antes de "book" foi apagado!
+%
+%book{JW07,
+% author    = {Richard A. Johnson and Dean W. Wichern},
+% title     = {Applied Multivariate Statistical Analysis},
+% publisher = {Pearson Prentice Hall},
+% edition   = 6,
+% year      = {2007},
+% isbn      = {978-0131877153},
+% location  = {Upper Saddle River NJ},
+%}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% O CAMPO "MONTH" %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% biblatex prefere o uso do campo "date" para definir ano, mês etc. No
+% entanto, se você quiser garantir compatibilidade tanto com biblatex
+% quanto com bibtex, use os campos "year" e "month". Ambos reconhecem
+% diversos formatos para o campo "month", mas apenas um funciona
+% corretamente com os dois: o nome do mês em inglês, abreviado com três
+% letras minúsculas e sem chaves, ou seja:
+%
+% ...
+% title  = {Some title},
+% author = {Somebody},
+% year   = {2011},
+% month  = oct,
+% ...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Algumas entradas não são usadas em poster.tex ou apresentacao.tex, mas
+% isso não é um problema: você pode ter um banco de dados com todos os
+% papers de seu interesse e, em um dado texto, citar apenas alguns deles.
+
+@online{oValue,
+	author={{Manuel Hoffmann, Frank Nagle, Yanuo Zhou}},
+	title={The Value of Open
+	Source Software},
+	url={https://www.hbs.edu/ris/Publication%20Files/24-038_51f8444f-502c-4139-8bf2-56eb4b65c58a.pdf},
+	date={2024-01-01},
+}
+
+@online{evoSoft,
+	author={{Michael W. Godfrey and Qiang Tu}},
+	title={Evolution in Open Source Software:
+	A Case Study},
+	url={https://turingmachine.org/opensource/papers/godfrey2000.pdf},
+	date={2000},
+}
+
+
+@online{duks,
+	author={{Rafael Passos and Arthur Pilone Maia da Silva}},
+	title={Dashboard for Unified Kernel Statistics},
+	url={https://duks.rcpassos.me/},
+}
+
+@INPROCEEDINGS{streamline,
+	author={Passos, Rafael and Pilone, Arthur and Tadokoro, David and Meirelles, Paulo},
+	booktitle={2025 IEEE Working Conference on Software Visualization (VISSOFT)}, 
+	title={Streamlining Analyses on the Linux Kernel with DUKS}, 
+	year={2025},
+	volume={},
+	number={},
+	pages={125-128},
+	keywords={Analytical models;Visualization;Data analysis;Linux;Data visualization;Software;Maintenance;Kernel;Videos;Software development management;Linux kernel;Software Heritage;Visual Analysis;Free Software development model;Free Software maintainers},
+	doi={10.1109/VISSOFT67405.2025.00025}}
+	
+	
+@INPROCEEDINGS{rivers,
+	author={Burch, Michael and Munz, Tanja and Beck, Fabian and Weiskopf, Daniel},
+	booktitle={2015 IEEE 3rd Working Conference on Software Visualization (VISSOFT)}, 
+	title={Visualizing work processes in software engineering with developer rivers}, 
+	year={2015},
+	volume={},
+	number={},
+	pages={116-124},
+	keywords={Rivers;Visualization;Data visualization;Color;Software systems;Monitoring},
+	doi={10.1109/VISSOFT.2015.7332421}}
+
+@INPROCEEDINGS{denim,
+	author={André, Maxime and Raglianti, Marco and Cleve, Anthony and Lanza, Michele},
+	booktitle={2025 IEEE International Conference on Software Maintenance and Evolution (ICSME)}, 
+	title={DENIM: Exploring Data Access in Microservices}, 
+	year={2025},
+	volume={},
+	number={},
+	pages={900-904},
+	keywords={Location awareness;Software maintenance;Microservice architectures;Data visualization;Distributed databases;Companies;Static analysis;Software systems;Interoperability;Software development management;microservices;databases;evolution;DENIM},
+	doi={10.1109/ICSME64153.2025.00103}}
+
+@online{treemap,
+	author={{Brian Johnson and Ben Shneiderman}},
+	title={Tree-Maps: A Space-Filling Approach to the Visualization of Hierarchical
+	Information Structures},
+	url={https://www.cs.umd.edu/~ben/papers/Johnson1991Tree.pdf},
+	date={1991},
+}
