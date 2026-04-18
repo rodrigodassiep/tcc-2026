@@ -1,3 +1,3 @@
-# tcc-2026
+# Trabalho de Conclusão de Curso - BCC - IME-USP - 2026
 
-Repository with the files of the TCC.
+Repository containg all the relevant files and docs related to the Trabalho de Conclusão de Curso.
