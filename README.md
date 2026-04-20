@@ -7,7 +7,8 @@ This project focuses on the development of an optimized visualization tool to ma
 ## 👥 Authors
 * **Guilherme Luiz Pereira de Almeida**
 * **Rodrigo Dassie Paneto**
-* **Supervisor:** Prof. Dr. Paulo Roberto Miranda Meirelles
+* **Supervisor:** Arthur Pilone Maia da Silva
+* **Co-Supervisor:** Prof. Dr. Paulo Meirelles
 
 ---
 
