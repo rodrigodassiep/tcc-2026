@@ -1,4 +1,3 @@
-
 % Arquivo LaTeX de exemplo de artigo
 %
 % Criação: Jesús P. Mena-Chalco
@@ -107,17 +106,18 @@
 % de diversos periódicos exige também outros dados, como email, filiação etc.
 \title{Visualizing Responsibility Distribution in the Linux Kernel Codebase}
 \author{
-  Guilherme Luiz Pereira de Almeida,
-  Rodrigo Dassie Paneto \\
-  Supervisor: Prof. Dr. Paulo Roberto Miranda Meirelles
+	Guilherme Luiz Pereira de Almeida,
+	Rodrigo Dassie Paneto \\
+	Supervisor: Arthur Pilone Maia da Silva\\
+	Co-supervisor: Prof. Dr. Paulo Meirelles
 }
 
 % O pacote hyperref armazena alguns metadados no PDF gerado (em particular,
 % o conteúdo de "\title" e "\author"). Também é possível armazenar outros
 % dados, como uma lista de palavras-chave ou o resumo.
 \hypersetup{
-  pdfkeywords={LaTeX, artigo, proposal, proposta},
-  pdfsubject={Proposal for a undergraduate thesis about Visualizing Responsibility Distribution in the Linux Kernel Codebase},
+	pdfkeywords={LaTeX, artigo, proposal, proposta},
+	pdfsubject={Proposal for an undergraduate thesis about Visualizing Responsibility Distribution in the Linux Kernel Codebase},
 }
 
 % Por padrão, article inclui a data atual; com este comando, você pode
@@ -131,62 +131,64 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-
-% Gera a "capa" do artigo (geralmente, título, autor etc. sem que haja uma
-% quebra de página para o restante do conteúdo)
-\maketitle
-
-\section{Introduction}
-\subsection{Context and motivation}
-The open-source community has been, for as long as it exists, a prominent facet of the software zeitgeist. Throughout the years, we have seen more and more software projects be created and maintained following this format.Indeed, the ability to create such large scale products backed by a global array of contributors proved to be quite a successful formula, as research indicates that the labor replacement value of open-source software is so significant that firms would need to spend over three times more on software development if these resources did not exist \cite{oValue} .
-\par Whether it be the numerous contributions of the GNU project, or the Linux kernel, the truth is that the FLOSS community achieved impressive results. Unlike traditional proprietary software, which often faces diminishing returns as complexity increases, the Linux kernel has demonstrated a unique pattern, expanding its codebase and contributor base simultaneously for decades \cite{evoSoft} .
-\par As any large software codebase, open source projects require a robust organizational cohesion. Sustaining a practical hierarchy of contributors while also ensuring that no person is over demanded, or a large part of the knowledge does not end up concentrated in  one single individual are not easy tasks, specially in the long term. Many efforts were made to better map these kind of issues inside a codebase, such as:
-
-\begin{itemize}
-	\item The Dashboard for Unified Kernel Statistics (DUKS)  is "an analytical platform providing insights into Linux Kernel development cycles, contributor patterns, and collaborative dynamics within one of the world's largest open-source projects"  \cite{duks}, enviosioned as "a cornerstone open-access utility to support analyses on the Linux kernel evolution and maintenance" \cite{streamline}.
-	\item The Developer Rivers, "a timeline-based visualization technique that shows how developers work on software modules. The flow of developers' activity is visualized by a river metaphor: activities are transferred between modules represented as rivers" \cite{rivers}.
-	\item The DENIM project, a "tool that enables users to identify data access points in microservices and visualize them in an interactive treemap" \cite{denim}.	
-\end{itemize}
-
-\par All these tools aim to simplify the process of analyzing large codebases and to help intelligently manage these complex work hierarchies, which is, as previously stated, one of the biggest challenges when dealing with open source software.
-\section{Proposal}
-\subsection{Objectives}
-Aiming to provide another tool to visualize open source codebases, the Linux Kernel in specific, this work objectives are:
-\begin{itemize}
-	\item Evaluate the previously developed tools and how they could aggregate to our work.
-	\item Develop an improved interactive Tree-Map \cite{treemap} visualization of the Kernel, displaying the responsability distribution of the kernel codebase.
-	\item Make the implementation more efficient, fluid and user-friendly, removing the sttutering present in some of the old visualizations.
-\end{itemize}
-\subsection{Methodology}
-The methodology is structured into three primary phases:
-\begin{itemize}
-	\item An initial evaluation of the existing Tree-Map implementations by Silva and André to identify specific bottlenecks in rendering logic and data parsing.
-	\item Mantain the foundational logic of previous tools while implementing a more efficient data structure (such as a hierarchical JSON) to represent the Kernel’s responsibility distribution.
-	\item Implement techniques such as hardware acceleration to eliminate the stuttering observed in previous iterations, ensuring a fluid interactive experience even at high depths of the directory tree.
- \end{itemize}
- \newpage
-\section{Chronogram}
-
-\begin{table}[h]
-\centering
-\small
-\begin{tabularx}{\textwidth}{|X|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\textbf{Tasks} & \textbf{M1} & \textbf{M2} & \textbf{M3} & \textbf{M4} & \textbf{M5} & \textbf{M6} & \textbf{M7} & \textbf{M8} & \textbf{M9} & \textbf{M10} \\ \hline
-Literature review and study of current Treemap implementations & X & X & X & & & & & & & \\ \hline
-Discussion and alignment of the optimized Treemap re-implementation architecture & & & X & X & & & & & & \\ \hline
-Implementation of the Treemap (as-is) with optimizations & & & & X & X & X & & & & \\ \hline
-Evaluation of results and efficiency metrics obtained after re-implementation & & & & & & X & X & & & \\ \hline
-Write the monograph & & & & & & X & X & X & X & \\ \hline
-Monograph proofreading and corrections, if necessary & & & & & & & & & & X \\ \hline
-\end{tabularx}
-\end{table}
-
-
-\newpage
-\printbibliography[
-  title=References, % "Referências", recomendado pela ABNT
-  %title=\bibname\label{sec:bib}, % "Bibliografia"
- ]
-
+	
+	% Gera a "capa" do artigo (geralmente, título, autor etc. sem que haja uma
+	% quebra de página para o restante do conteúdo)
+	\maketitle
+	
+	\section{Introduction}
+	\subsection{Context and motivation}
+	The open-source community has been, for as long as it has existed, a prominent facet of the software zeitgeist. Throughout the years, we have seen more and more software projects created and maintained following this format. Indeed, the ability to create such large-scale products backed by a global array of contributors proved to be quite a successful formula, as research indicates that the labor replacement value of open-source software is so significant that firms would need to spend over three times more on software development if these resources did not exist \cite{oValue} .
+	\par Whether it be the numerous contributions of the GNU project, or the Linux kernel, the truth is that the FLOSS community has achieved impressive results. Unlike traditional proprietary software, which often faces diminishing returns as complexity increases, the Linux kernel has demonstrated a unique pattern, expanding its codebase and contributor base simultaneously for decades \cite{evoSoft} .
+	\par As with any large software codebase, open-source projects require robust organizational cohesion. Sustaining a practical hierarchy of contributors while also ensuring that no person is overburdened and that a large part of the knowledge does not end up concentrated in a single individual is not an easy task, especially in the long term. Many efforts were made to better map these kinds of issues inside a codebase, such as:
+	
+	\begin{itemize}
+		\item The Dashboard for Unified Kernel Statistics (DUKS)  is "an analytical platform providing insights into Linux Kernel development cycles, contributor patterns, and collaborative dynamics within one of the world's largest open-source projects"  \cite{duks}, envisioned as "a cornerstone open-access utility to support analyses on the Linux kernel evolution and maintenance" \cite{streamline}.
+		\item The Developer Rivers, "a timeline-based visualization technique that shows how developers work on software modules. The flow of developers' activity is visualized by a river metaphor: activities are transferred between modules represented as rivers" \cite{rivers}.
+		\item The DENIM project, a "tool that enables users to identify data access points in microservices and visualize them in an interactive treemap" \cite{denim}. 
+	\end{itemize}
+	
+	\par All these tools aim to simplify the process of analyzing large codebases. They also help manage complex work hierarchies. As previously stated, managing these hierarchies is one of the biggest challenges when dealing with open source software.
+	\par However, there is still a lack of tools for web visualizations of responsibility distributions on large codebases such as the Linux Kernel. The sheer volume of contribution data and the size of the repository itself make concise visualization with good rendering performance difficult. Viewing this challenge as an opportunity, this work will focus on doing exactly that. It will provide a web visualization using a Tree-Map that aims to be both performant and user-friendly.
+	
+	\section{Proposal}
+	\subsection{Objectives}
+	Aiming to provide an interactive software visualization tool that efficiently depicts the complete codebase hierarchy of large FLOSS codebases, the objectives of this work are to:
+	\begin{itemize}
+		\item Evaluate the previously developed tools and how they could be integrated to our work.
+		\item Develop an improved interactive Tree-Map \cite{treemap} visualization of the Kernel, displaying the responsibility distribution of the kernel codebase.
+		\item Make the implementation more efficient, fluid, and user-friendly, removing the stuttering present in some of the old visualizations.
+	\end{itemize}
+	\subsection{Methodology}
+	The methodology is structured into three primary phases:
+	\begin{itemize}
+		\item An initial evaluation of the existing Tree-Map implementations by Silva and André to identify specific bottlenecks in rendering logic and data parsing.
+		\item Maintain the foundational logic of previous tools while implementing a more efficient data structure (such as a hierarchical JSON) to represent the Kernel’s responsibility distribution.
+		\item Implement techniques such as hardware acceleration to eliminate the stuttering observed in previous iterations, ensuring a fluid interactive experience even at high depths of the directory tree.
+	\end{itemize}
+	\newpage
+	\section{Chronogram}
+	
+	\begin{table}[h]
+		\centering
+		\small
+		\begin{tabularx}{\textwidth}{|X|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			\textbf{Tasks} & \textbf{M1} & \textbf{M2} & \textbf{M3} & \textbf{M4} & \textbf{M5} & \textbf{M6} & \textbf{M7} & \textbf{M8} & \textbf{M9} & \textbf{M10} \\ \hline
+			Literature review and study of current Treemap implementations & X & X & X & & & & & & & \\ \hline
+			Discussion and alignment of the optimized Treemap re-implementation architecture & & & X & X & & & & & & \\ \hline
+			Implementation of the Treemap (as-is) with optimizations & & & & X & X & X & & & & \\ \hline
+			Evaluation of results and efficiency metrics obtained after re-implementation & & & & & & X & X & & & \\ \hline
+			Write the monograph & & & & & & X & X & X & X & \\ \hline
+			Monograph proofreading and corrections, if necessary & & & & & & & & & & X \\ \hline
+		\end{tabularx}
+	\end{table}
+	
+	
+	\newpage
+	\printbibliography[
+	title=References, % "Referências", recomendado pela ABNT
+	%title=\bibname\label{sec:bib}, % "Bibliografia"
+	]
+	
 \end{document}
